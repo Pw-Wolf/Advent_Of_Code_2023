@@ -1,3 +1,5 @@
+import os
+
 import requests
 
 
@@ -5,6 +7,11 @@ def get_key():
 	with open("session", "r") as o:
 		key = o.read()
 	return key
+
+def get_input(day):
+	with open(f"./{day}_day/input", "r") as o:
+		data = o.readlines()
+	return data
 
 def input_graber(url, key):
 
@@ -19,9 +26,12 @@ def store_text(dir, text):
 		o.write(text)
 
 if __name__ == "__main__":
-	day = "1"
+	day = "2"
 	url = f"https://adventofcode.com/2023/day/{day}/input"
-	dir = "./{day}_day/"
+	dir = f"./{day}_day/"
+	print(os.path.exists(dir))
+	if not os.path.exists(dir):
+		os.makedirs(dir)
 	key = get_key()
 	text = input_graber(url, key)
 	store_text(dir, text)

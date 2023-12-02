@@ -1,10 +1,9 @@
 import re
+import sys
 
+sys.path.append(".")
+from engine import get_input
 
-def get_input():
-	with open("./1_day/input", "r") as o:
-		data = o.read()
-	return data.split()
 
 def one(data):
 	return sum([ int(re.findall(r'\d', i)[0] + re.findall(r'\d', i)[-1]) for i in data])
@@ -21,6 +20,6 @@ def two(data):
 
 
 if __name__ == "__main__":
-	data = get_input()
+	data = get_input("1")
 	print(one(data))
 	print(two(data))
