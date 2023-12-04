@@ -26,7 +26,7 @@ def store_text(dir, text):
 		o.write(text)
 
 if __name__ == "__main__":
-	day = "3"
+	day = "4"
 	url = f"https://adventofcode.com/2023/day/{day}/input"
 	dir = f"./{day}_day/"
 	if not os.path.exists(dir):
