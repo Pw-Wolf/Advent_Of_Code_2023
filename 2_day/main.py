@@ -21,7 +21,7 @@ def one(data):
 
 def two(data):
 	suma = []
-	for n, i in enumerate(data):
+	for i in data:
 		out = {"red": 0, "green":0, "blue": 0}
 		for b in [ i.replace(" ", "").split(",") for i in i.split(":")[1].split(";") ]:
 			for j in b:
@@ -34,4 +34,3 @@ if __name__ == "__main__":
 	data = [i.strip("\n") for i in get_input("2")]
 	print(one(data))
 	print(two(data))
-	# 78375

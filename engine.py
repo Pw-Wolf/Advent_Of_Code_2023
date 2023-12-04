@@ -26,10 +26,9 @@ def store_text(dir, text):
 		o.write(text)
 
 if __name__ == "__main__":
-	day = "2"
+	day = "3"
 	url = f"https://adventofcode.com/2023/day/{day}/input"
 	dir = f"./{day}_day/"
-	print(os.path.exists(dir))
 	if not os.path.exists(dir):
 		os.makedirs(dir)
 	key = get_key()
